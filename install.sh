@@ -12,6 +12,8 @@ echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.co
 sudo apt-get update
 sudo apt-get install nodejs -y
 
+cd /home/$USER
+
 wget https://armkeil.blob.core.windows.net/developer/Files/downloads/gnu-rm/10.3-2021.10/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2 	
 
 tar -xvf gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2
