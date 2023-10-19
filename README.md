@@ -1,6 +1,7 @@
 # infiniscript
 InfiniTime Installation Script for Debian based Linux
 
-Only required package = 
+Tested on Ubuntu 22.04.3 LTS VM, bare metal, and WSL
 
-git
+
+
