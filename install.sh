@@ -1,6 +1,6 @@
 sudo apt-get update
 
-sudo apt-get install -y git python3-pip curl python-is-python3 cmake ca-certificates gnupg 
+sudo apt-get install -y git python3-pip curl python-is-python3 cmake ca-certificates gnupg unzip tar
 
 sudo mkdir -p /etc/apt/keyrings 
 
