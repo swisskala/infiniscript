@@ -28,7 +28,7 @@ rm nRF5_SDK_15.3.0_59ac345.zip
 
 git clone https://github.com/adafruit/Adafruit_nRF52_nrfutil.git 
 cd /home/$USER/Adafruit_nRF52_nrfutil
-pip3 install adafruit-nrfutil --break-system-apckages
+pip3 install adafruit-nrfutil --break-system-packages
 cd /home/$USER
 
 git clone https://github.com/InfiniTimeOrg/InfiniTime.git  
