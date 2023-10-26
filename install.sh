@@ -28,7 +28,7 @@ rm nRF5_SDK_15.3.0_59ac345.zip
 
 git clone https://github.com/adafruit/Adafruit_nRF52_nrfutil.git 
 cd /home/$USER/Adafruit_nRF52_nrfutil
-pip3 install -r requirements.txt
+pip3 install -r requirements.txt --break-system-packages
 
 sudo python3 setup.py install
 
