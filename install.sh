@@ -35,8 +35,8 @@ git clone https://github.com/InfiniTimeOrg/InfiniTime.git
 cd /home/$USER/InfiniTime
 git submodule update --init
 mkdir build
-python -m pip install wheel
-python -m pip install -r tools/mcuboot/requirements.txt
+python -m pip install wheel --break-system-packages
+python -m pip install -r tools/mcuboot/requirements.txt --break-system-packages
 
 npm install lv_font_conv@1.5.2			
 npm install lv_img_conv@0.4.0
