@@ -1,7 +1,7 @@
 # infiniscript
 InfiniTime Installation + Firmware Build Script for Debian based Linux
 
-Tested on Ubuntu 22.04.3 LTS VM, bare metal, and WSL
+Still in works, do not use
 
 Copy the following code into your terminal, and the script will do the rest:
 ```
