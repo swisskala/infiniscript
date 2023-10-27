@@ -35,7 +35,7 @@ fi
 
 git clone https://github.com/adafruit/Adafruit_nRF52_nrfutil.git 
 cd $HOME/Adafruit_nRF52_nrfutil
-python -m pip install -r requirements.txt --break-system-packages
+python3 -m pip install -r requirements.txt --break-system-packages
 pip3 install adafruit-nrfutil --break-system-packages
 cd cd $HOME
 
