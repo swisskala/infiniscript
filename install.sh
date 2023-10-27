@@ -1,4 +1,5 @@
 sudo apt-get update
+sudo apt-get upgrade -y
 
 sudo apt-get install -y git python3-pip curl python-is-python3 cmake ca-certificates gnupg unzip tar
 
@@ -12,28 +13,34 @@ echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.co
 sudo apt-get update
 sudo apt-get install nodejs -y
 
-cd /home/$USER
+cd $HOME
 
-wget https://armkeil.blob.core.windows.net/developer/Files/downloads/gnu-rm/10.3-2021.10/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2 	
+# Check for the existence of gcc-arm-none-eabi folder
+if [ ! -d "gcc-arm-none-eabi-10.3-2021.10" ]; then
+    wget https://armkeil.blob.core.windows.net/developer/Files/downloads/gnu-rm/10.3-2021.10/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2
+    tar -xvf gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2
+    rm gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2
+else
+    echo "gcc-arm-none-eabi-10.3-2021.10 folder already exists, skipping download and extraction."
+fi
 
-tar -xvf gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2
-
-rm gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2
-
-wget https://developer.nordicsemi.com/nRF5_SDK/nRF5_SDK_v15.x.x/nRF5_SDK_15.3.0_59ac345.zip
-
-unzip nRF5_SDK_15.3.0_59ac345.zip 
-
-rm nRF5_SDK_15.3.0_59ac345.zip
+# Check for the existence of nRF5_SDK folder
+if [ ! -d "nRF5_SDK_15.3.0_59ac345" ]; then
+    wget https://developer.nordicsemi.com/nRF5_SDK/nRF5_SDK_v15.x.x/nRF5_SDK_15.3.0_59ac345.zip
+    unzip nRF5_SDK_15.3.0_59ac345.zip
+    rm nRF5_SDK_15.3.0_59ac345.zip
+else
+    echo "nRF5_SDK_15.3.0_59ac345 folder already exists, skipping download and extraction."
+fi
 
 git clone https://github.com/adafruit/Adafruit_nRF52_nrfutil.git 
-cd /home/$USER/Adafruit_nRF52_nrfutil
+cd $HOME/Adafruit_nRF52_nrfutil
 python -m pip install -r requirements.txt --break-system-packages
 pip3 install adafruit-nrfutil --break-system-packages
-cd /home/$USER
+cd cd $HOME
 
 git clone https://github.com/InfiniTimeOrg/InfiniTime.git  
-cd /home/$USER/InfiniTime
+cd $HOME/InfiniTime/build
 git submodule update --init
 mkdir build
 python -m pip install wheel --break-system-packages
