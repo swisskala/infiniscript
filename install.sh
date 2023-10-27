@@ -41,8 +41,8 @@ cd $HOME
 if [ ! -d "$HOME/Adafruit_nRF52_nrfutil" ]; then
     git clone https://github.com/adafruit/Adafruit_nRF52_nrfutil.git 
     cd $HOME/Adafruit_nRF52_nrfutil
-    python3 -m pip install -r requirements.txt --break-system-packages
-    pip3 install adafruit-nrfutil --break-system-packages
+    sudo python3 -m pip install -r requirements.txt --break-system-packages
+    sudo pip3 install adafruit-nrfutil --break-system-packages
 else
     echo "Adafruit_nRF52_nrfutil repository already exists, skipping clone."
     cd $HOME
@@ -54,8 +54,8 @@ git clone https://github.com/InfiniTimeOrg/InfiniTime.git
 cd $HOME/InfiniTime
 git submodule update --init
 mkdir build
-python3 -m pip install wheel --break-system-packages
-python3 -m pip install -r tools/mcuboot/requirements.txt --break-system-packages
+sudo python3 -m pip install wheel --break-system-packages
+sudo python3 -m pip install -r tools/mcuboot/requirements.txt --break-system-packages
 
 npm install lv_font_conv@1.5.2			
 npm install lv_img_conv@0.4.0
