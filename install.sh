@@ -15,13 +15,16 @@ sudo apt-get install nodejs -y
 
 cd $HOME
 
+GREEN='\033[0;32m'
+RESET='\033[0m' # Reset text formatting and color
+
 # Check for the existence of gcc-arm-none-eabi folder
 if [ ! -d "gcc-arm-none-eabi-10.3-2021.10" ]; then
     wget https://armkeil.blob.core.windows.net/developer/Files/downloads/gnu-rm/10.3-2021.10/gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2
     tar -xvf gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2
     rm gcc-arm-none-eabi-10.3-2021.10-x86_64-linux.tar.bz2
 else
-    echo "gcc-arm-none-eabi-10.3-2021.10 folder already exists, skipping download and extraction."
+    echo -e "${GREEN}gcc-arm-none-eabi-10.3-2021.10 folder already exists, skipping download and extraction.${RESET}"
 fi
 
 cd $HOME
@@ -32,7 +35,7 @@ if [ ! -d "nRF5_SDK_15.3.0_59ac345" ]; then
     unzip nRF5_SDK_15.3.0_59ac345.zip
     rm nRF5_SDK_15.3.0_59ac345.zip
 else
-    echo "nRF5_SDK_15.3.0_59ac345 folder already exists, skipping download and extraction."
+    echo -e "${GREEN}nRF5_SDK_15.3.0_59ac345 folder already exists, skipping download and extraction.${RESET}"
 fi
 
 cd $HOME
