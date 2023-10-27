@@ -33,11 +33,16 @@ else
     echo "nRF5_SDK_15.3.0_59ac345 folder already exists, skipping download and extraction."
 fi
 
-git clone https://github.com/adafruit/Adafruit_nRF52_nrfutil.git 
-cd $HOME/Adafruit_nRF52_nrfutil
-python3 -m pip install -r requirements.txt --break-system-packages
-pip3 install adafruit-nrfutil --break-system-packages
-cd $HOME
+# Check for the existence of Adafruit_nRF52_nrfutil repository
+if [ ! -d "$HOME/Adafruit_nRF52_nrfutil" ]; then
+    git clone https://github.com/adafruit/Adafruit_nRF52_nrfutil.git 
+    cd $HOME/Adafruit_nRF52_nrfutil
+    python3 -m pip install -r requirements.txt --break-system-packages
+    pip3 install adafruit-nrfutil --break-system-packages
+else
+    echo "Adafruit_nRF52_nrfutil repository already exists, skipping clone."
+    cd $HOME
+fi
 
 git clone https://github.com/InfiniTimeOrg/InfiniTime.git  
 cd $HOME/InfiniTime/build
