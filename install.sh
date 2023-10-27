@@ -37,7 +37,7 @@ git clone https://github.com/adafruit/Adafruit_nRF52_nrfutil.git
 cd $HOME/Adafruit_nRF52_nrfutil
 python3 -m pip install -r requirements.txt --break-system-packages
 pip3 install adafruit-nrfutil --break-system-packages
-cd cd $HOME
+cd $HOME
 
 git clone https://github.com/InfiniTimeOrg/InfiniTime.git  
 cd $HOME/InfiniTime/build
