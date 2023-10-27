@@ -24,6 +24,8 @@ else
     echo "gcc-arm-none-eabi-10.3-2021.10 folder already exists, skipping download and extraction."
 fi
 
+cd $HOME
+
 # Check for the existence of nRF5_SDK folder
 if [ ! -d "nRF5_SDK_15.3.0_59ac345" ]; then
     wget https://developer.nordicsemi.com/nRF5_SDK/nRF5_SDK_v15.x.x/nRF5_SDK_15.3.0_59ac345.zip
@@ -32,6 +34,8 @@ if [ ! -d "nRF5_SDK_15.3.0_59ac345" ]; then
 else
     echo "nRF5_SDK_15.3.0_59ac345 folder already exists, skipping download and extraction."
 fi
+
+cd $HOME
 
 # Check for the existence of Adafruit_nRF52_nrfutil repository
 if [ ! -d "$HOME/Adafruit_nRF52_nrfutil" ]; then
@@ -44,8 +48,10 @@ else
     cd $HOME
 fi
 
+cd $HOME
+
 git clone https://github.com/InfiniTimeOrg/InfiniTime.git  
-cd $HOME/InfiniTime/build
+cd $HOME/InfiniTime
 git submodule update --init
 mkdir build
 python3 -m pip install wheel --break-system-packages
