@@ -34,8 +34,8 @@ cd $HOME
 if [ ! -d "$HOME/Adafruit_nRF52_nrfutil" ]; then
     git clone https://github.com/adafruit/Adafruit_nRF52_nrfutil.git 
     cd $HOME/Adafruit_nRF52_nrfutil
-    sudo python3 -m pip install -r requirements.txt --break-system-packages
-    sudo pip3 install adafruit-nrfutil --break-system-packages
+    sudo python3 -m pip install -r requirements.txt
+    sudo pip3 install adafruit-nrfutil
 else
     echo "Adafruit_nRF52_nrfutil repository already exists, skipping clone."
     cd $HOME
